@@ -4,6 +4,4 @@ function parseQuery(url) {
     return q;
 }
 
-class Utils {
-    
-}
+console.log(parseQuery('www.test.com/api/?id=100'));
