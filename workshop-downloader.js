@@ -36,10 +36,10 @@
                 GM_xmlhttpRequest({
                     method: "GET",
                     url: `${this._DownloadAPI}/${itemID}`,
+                    responseType: "document",
                     onload: (res) => {
                         if (res.status === 200) {
-                            const parser = new DOMParser();
-                            const page = parser.parseFromString(res.response, 'text/html');
+                            const page = res.response;
                             const downloadLink = page.querySelector('b > a').href;
                             resolve(downloadLink);
                         } else {
